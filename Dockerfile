@@ -18,4 +18,4 @@ COPY user-data/huggingface-token /root/.cache/huggingface/token
 COPY user-data/netrc /root/.netrc
 
 WORKDIR /app
-ENTRYPOINT ["python3", "sweep.py"]
+ENTRYPOINT ["python3", "sweep.py", "--num_processes=1"]
