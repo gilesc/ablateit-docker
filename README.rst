@@ -1,4 +1,4 @@
-AblateIt for dumdums and/or Docker users
+AblateIt for fellow dumdums and/or Docker users
 
 1. Install docker / nvidia-docker on the host machine(s)
 2. Register for access to llama2 on huggingface

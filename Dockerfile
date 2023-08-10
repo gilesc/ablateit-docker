@@ -18,5 +18,4 @@ COPY user-data/huggingface-token /root/.cache/huggingface/token
 COPY user-data/netrc /root/.netrc
 
 WORKDIR /app
-#ENTRYPOINT ["/bin/bash", "-c","huggingface-cli login && python3 sweep.py"]
 ENTRYPOINT ["python3", "sweep.py"]
