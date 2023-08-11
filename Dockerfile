@@ -18,6 +18,7 @@ COPY user-data/huggingface-token /root/.cache/huggingface/token
 COPY user-data/netrc /root/.netrc
 
 RUN sed -i 's/accelerate launch/accelerate launch --num_processes=1 /g' /app/sweep.py
+RUN sed -i 's/wandb_project:/wandb_project: "AblateIt-Sweeps"/g' /app/sweep_configs/default_training_args/default_lora.yaml
 
 WORKDIR /app
 ENTRYPOINT ["python3", "sweep.py"]
