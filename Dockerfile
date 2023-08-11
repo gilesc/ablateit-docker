@@ -17,7 +17,7 @@ RUN mkdir -p /root/.cache/huggingface
 COPY user-data/huggingface-token /root/.cache/huggingface/token
 COPY user-data/netrc /root/.netrc
 
-RUN sed -i 's/accelerate launch/accelerate launch --num_processes=1 --multi_gpu=no/g' /app/sweep.py
+#RUN sed -i 's/accelerate launch/accelerate launch --num_processes=1' /app/sweep.py
 
 WORKDIR /app
 ENTRYPOINT ["python3", "sweep.py"]
