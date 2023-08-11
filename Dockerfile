@@ -17,7 +17,6 @@ RUN mkdir -p /root/.cache/huggingface
 COPY user-data/huggingface-token /root/.cache/huggingface/token
 COPY user-data/netrc /root/.netrc
 
-RUN sed -i 's/accelerate launch/accelerate launch --num_processes=1 /g' /app/sweep.py
 RUN sed -i 's/wandb_project:/wandb_project: "docker-test"/g' /app/configs/default_training_configs/default_lora.yaml
 
 WORKDIR /app
